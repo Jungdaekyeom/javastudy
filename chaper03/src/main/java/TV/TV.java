@@ -42,7 +42,7 @@ public class TV {
 
 	public void volume(int i) {
 		if(i>100 || i<0) {
-			System.out.println("볼륨 범위를 벗어났습니다.");
+			System.out.println("볼륨 범위를 벗어났습니다.!");
 		} else {
 			volume = i;
 		}
