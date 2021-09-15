@@ -8,7 +8,7 @@ public class MainApp2 {
 			stack.push("Hello");
 			stack.push("World");
 			stack.push("!!!");
-			// stack.push(1);
+//			stack.push(1);
 			stack.push("java");
 
 			while (stack.isEmpty() == false) {

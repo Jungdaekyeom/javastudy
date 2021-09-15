@@ -10,6 +10,7 @@ public class MyStack {
 		this.num = num;
 		str = new String[this.num];
 	}
+	
 	public void push(String s) {
 		//공간이 있는지 확인
 		if (count < this.num) {

@@ -14,7 +14,7 @@ public class MyStack02 {
 			resize();
 		}
 
-		buffer[++top] = s;
+		buffer[++top] = s;		
 	}
 
 	public Object pop() throws MyStackException {
@@ -22,7 +22,7 @@ public class MyStack02 {
 			throw new MyStackException("stack is empty");
 		}
 
-		String result = buffer[top];
+		Object result = buffer[top];
 		buffer[top--] = null;
 
 		return result;

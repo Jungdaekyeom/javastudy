@@ -44,5 +44,6 @@
   	<module>practice05</module>
   	<module>practice_finaltest</module>
   	<module>Study</module>
+  	<module>network</module>
   </modules>
 </project>
