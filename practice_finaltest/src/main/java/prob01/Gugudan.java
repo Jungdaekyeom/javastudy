@@ -4,8 +4,6 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-// set을 사용해야 함
-
 public class Gugudan {
 
 	static int resultNumber = 0;
@@ -15,27 +13,19 @@ public class Gugudan {
 		int r = randomize(1, 9);
 
 		resultNumber = l * r;
-
 		int[] answerNumbers = randomizeAnswers();
-		// 하나는 정답이 나와야 하므로, 0~8까지 총 9개의 위치 중에서 랜덤으로 위치설정
 		int loc = randomize(0, 8);
-		// 배열 : 리스트
 		answerNumbers[loc] = resultNumber;
 
 		System.out.println(l + " x " + r + " = ?");
 
 		int length = answerNumbers.length;
-
-		// ABC
-		// DEF
-		// GHI 순으로 정렬
 		for (int i = 0; i < length; i++) {
 			if (i % 3 == 0) {
 				System.out.print("\n");
 			} else {
 				System.out.print("\t");
 			}
-
 			System.out.print(answerNumbers[i]);
 		}
 
@@ -53,26 +43,63 @@ public class Gugudan {
 		int random = (int) (Math.random() * rNum) + lNum;
 		return random;
 	}
+	
+	public void sort(Set set) {
+		
+	}
 
 	private static int[] randomizeAnswers() {
 		/* 코드 작성(수정 가능) */
 		final int COUNT_ANSWER_NUMBER = 9;
+		int count = 0;
 		int[] boardNumbers = new int[COUNT_ANSWER_NUMBER];
-				
+
+//		Set<Trap> s = new HashSet<>();
 		Set<Integer> s = new HashSet<>();
-		
-		while(true) {
-			int a = randomize(1, 9);
-			int b = randomize(1, 9);
+		//HashSet<Integer> s = new HashSet<>();
+		while (true) {
+			int l = randomize(1, 9);
+			int r = randomize(1, 9);
+
+			if (l*r == resultNumber) {
+				continue;
+			} else {
+				s.add(l*r);	
+			}
 			
-			s.add(new Trap(a, b));
+			// s.add(new Trap(l, r));
+
+//			if (s.size() == 9) {
+//				int i = 0;
+//				for (Trap t : s) {
+//					boardNumbers[i] = t.result();
+//					i++;
+//				}
+//				break;
+//			}
 			
 			if(s.size() == 9) {
-				System.out.println(s);
+				int i = 0;
+				for (Integer number : s) {
+					boardNumbers[i] = number;
+					i++;
+				}
 				break;
 			}
 		}
 
 		return boardNumbers;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
 	}
 }

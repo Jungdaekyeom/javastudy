@@ -9,9 +9,9 @@ public class Point implements Drawable {
 
 	// 오버로딩
 	public Point() {
-		
+
 	}
-	
+
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -52,8 +52,7 @@ public class Point implements Drawable {
 			disapear();
 
 		}
-		
-		
+
 	}
 
 	public void disapear() {

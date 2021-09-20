@@ -13,7 +13,8 @@ public class Gugudan {
 
 	@Override
 	public String toString() {
-		return "Gugudan [left=" + left + ", right=" + right + "]";
+		// TODO Auto-generated method stub
+		return new Integer(left * right).toString();
 	}
 
 	@Override

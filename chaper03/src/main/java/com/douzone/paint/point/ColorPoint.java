@@ -7,10 +7,7 @@ public class ColorPoint extends Point {
 	// 캡슐화
 	private String color;
 	
-	public ColorPoint(int x, int y, String color) {
-//		setX(x);
-//		setY(y);
-		
+	public ColorPoint(int x, int y, String color) {		
 		// 부모 클래스의 Point생성자에 접근
 		super(x, y);
 		this.color = color;

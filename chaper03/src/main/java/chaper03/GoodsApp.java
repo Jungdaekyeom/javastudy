@@ -13,14 +13,11 @@ public class GoodsApp {
 		goods.showInfo();
 		int discountPrice = goods.calcDiscountPrice(10);
 		System.out.println(discountPrice);
-		
-		
+
 		System.out.println(Goods.countOfGoods);
 
 		Goods goods2 = new Goods();
 		Goods goods3 = new Goods();
-		
-		
 
 	}
 }

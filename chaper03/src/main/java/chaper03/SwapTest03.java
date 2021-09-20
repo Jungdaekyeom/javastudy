@@ -12,18 +12,18 @@ public class SwapTest03 {
 		/* Swap하기 */
 
 		swap(a, b);
-		
+
 		System.out.println(a.val + " : " + b.val);
-		
+
 	}
-	
+
 	public static void swap(Value a, Value b) {
-		
+
 		int temp;
-		
+
 		temp = a.val;
 		a.val = b.val;
 		b.val = temp;
-		
+
 	}
 }

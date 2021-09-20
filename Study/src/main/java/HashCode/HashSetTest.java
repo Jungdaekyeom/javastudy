@@ -3,15 +3,17 @@ package HashCode;
 import java.util.HashSet;
 import java.util.Set;
 
+import Array.ArrayStudy;
+
 public class HashSetTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Set<Test> set = new HashSet<Test>();
+		Set<ArrayStudy> set = new HashSet<ArrayStudy>();
 		
-		Test t1 = new Test(10, 20);
-		Test t2 = new Test(10, 20);
+		ArrayStudy t1 = new ArrayStudy(10, 20);
+		ArrayStudy t2 = new ArrayStudy(10, 20);
 
 		set.add(t1);
 		set.add(t2);

@@ -16,7 +16,12 @@ public class Trap {
 	public int hashCode() {
 		return Objects.hash(left * right);
 	}
-
+	
+	@Override
+	public String toString() {
+		return new Integer(left*right).toString();
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -27,5 +32,9 @@ public class Trap {
 			return false;
 		Trap other = (Trap) obj;
 		return left * right == other.left * other.right;
+	}
+	
+	public int result() {
+		return left * right;
 	}
 }

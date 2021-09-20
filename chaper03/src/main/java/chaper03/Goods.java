@@ -1,7 +1,5 @@
 package chaper03;
 
-import java.util.Objects;
-
 public class Goods {
 
 	// 외부 접근 불가
