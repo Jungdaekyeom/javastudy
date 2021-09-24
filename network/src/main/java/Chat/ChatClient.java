@@ -59,7 +59,6 @@ public class ChatClient {
 				String line = scanner.nextLine();
 
 				if ("exit".equals(line)) {
-					System.out.println("exit보냄");
 					pw.println("exit:" + nickname);
 					break;
 				} else {
