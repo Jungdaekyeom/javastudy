@@ -32,7 +32,6 @@ public class ChatServerThread extends Thread {
 	 * 요청 처리를 위한 Loop 작성 - run 메소드 오버라이딩 - main thread로 부터 전달받은 socket를 통해 IO
 	 * Stream을 받아오는데 문자 단위 처리와 라인 단위 읽기를 위해 보조 스트림 객체를 생성해서 사용한다.
 	 */
-
 	@Override
 	public void run() {
 
@@ -63,18 +62,20 @@ public class ChatServerThread extends Thread {
 				 * - chat 프로토콜 형식 - 요청명령: 파라미터1: 파라미터2: … \r\n - 각 요청을 구분하는 경계가 되는 것은 \r\n 이다. -
 				 * 요청은 “:” 기준으로 요청명령과 파라미터로 분리한다. - 각 각의 요청명령을 처리하는 메서드를 구현하고 호출한다.
 				 */
-				String[] text = data.split(":");
-				// pw.println(data);
+				String[] text = data.split(":");			
+
 				if ("JOIN".equals(text[0])) {
+					System.out.println("join 받음");
 
 					doJoin(text[1], pw);
 
 				} else if ("msg".equals(text[0])) {
+					System.out.println("msg 받음");
 
 					doMessages(text[1]);
 
-				} else if ("quit".equals(text[0])) {
-
+				} else if ("exit".equals(text[0])) {
+					System.out.println("exit 받음");
 					doQuit(nickname, pw);
 					break;
 
@@ -107,6 +108,7 @@ public class ChatServerThread extends Thread {
 		 * 때문에 동기화 처리를 해 주어야 한다. - PrintWriter의 메서드를 사용해야 하기 때문에 다운 캐스팅을 명시적으로 해주었다.
 		 */
 		synchronized (listWriters) {
+			
 			log("broadcast 통과");
 			// HashMap에서 값만 빼서 PrintWriter oos라는 변수에 대입을 한다.
 			// null이 나오기전까지 계속 반복한다.
@@ -123,6 +125,8 @@ public class ChatServerThread extends Thread {
 
 	private void doJoin(String nickName, PrintWriter writer) {
 		this.nickname = nickName;
+		
+		writer.println("입장 성공!");
 
 		String data = nickName + "님이 참여하였습니다.";
 		broadcast(data);
@@ -131,7 +135,6 @@ public class ChatServerThread extends Thread {
 		addWriter(writer);
 
 		// ack
-		writer.println("join:ok");
 		writer.flush();
 	}
 
@@ -139,8 +142,11 @@ public class ChatServerThread extends Thread {
 		this.nickname = nickName;
 
 		String data = nickname + "님이 퇴장 하였습니다.";
+		
 		broadcast(data);
 		removeWriter(writer);
+		// ack
+		writer.flush();
 	}
 
 	private void removeWriter(PrintWriter writer) {
