@@ -24,7 +24,6 @@ public class ChatServerThread extends Thread {
 	List<Writer> listWriters = new ArrayList<Writer>();
 
 	public ChatServerThread(Socket socket, List<Writer> listWriters) {
-
 		this.socket = socket;
 		this.listWriters = listWriters;
 	}
@@ -138,7 +137,7 @@ public class ChatServerThread extends Thread {
 
 	private void doQuit(String nickName, PrintWriter writer) {
 		this.nickname = nickName;
-		
+
 		String data = nickname + "님이 퇴장 하였습니다.";
 		broadcast(data);
 		removeWriter(writer);

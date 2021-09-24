@@ -35,7 +35,8 @@ public class ChatClient {
 
 			// 뭔지 모르겠음.
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-			// true : 버퍼를 비워줌 : printwriter의 버퍼를 비워줌.
+			
+			// true : 버퍼를 비워줌(flush 효과) : printwriter의 버퍼를 비워줌.
 			// printwriter는 readline으로 버퍼 째로 보냄
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 

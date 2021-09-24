@@ -20,6 +20,9 @@ public class SongTest {
 		Song song2 = new Song("신호등", "이무진");
 		song2.show();
 		
+		Song song3 = new Song();
+		song3.show();
+		
 	}
 
 }

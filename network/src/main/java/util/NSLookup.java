@@ -1,7 +1,9 @@
 package util;
 
+import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class NSLookup {
 
@@ -15,8 +17,11 @@ public class NSLookup {
 		// > quit
 		// 종료됨
 
+		InputStream is = System.in;
+		Scanner sc = new Scanner(is);
+		
 		// 이렇게 동작하는 클래스 제작
-		String line = "www.douzone.com";
+		String line = sc.nextLine();
 		// 이름으로 ip를 모두 가져오겠다.
 		try {
 			InetAddress[] inetAddress = InetAddress.getAllByName(line);

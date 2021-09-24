@@ -18,7 +18,7 @@ public class WrapperClassTest01 {
 		
 		Integer j1 = 10;
 		Integer j2 = 10;
-		
+				
 		// 동일성과 동질성이 똑같다.
 		System.out.println(j1 == j2);
 		System.out.println(j1.equals(j2));
@@ -32,7 +32,19 @@ public class WrapperClassTest01 {
 		System.out.println(m);
 		System.out.println(m2);
 		
+		Integer aa = 3;
+		Integer bb = 4;
+		
+		System.out.println(aa + bb);
 
+		bb = bb + aa;
+		
+		System.out.println(bb.getClass().getName());
+		
+		Object obj = 3;
+		Object obj2 = new Integer(3);
+		
+		
 	}
 
 }

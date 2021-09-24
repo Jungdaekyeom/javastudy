@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class ChatServer {
 
+	// 포트 번호
 	private static final int PORT = 8888;
 
 	public static void main(String[] args) {

@@ -12,6 +12,7 @@ public class MyClass {
 		if (5-5==0) {
 			throw new MyException();
 		}
+		
 		if(10 - 10 == 0) {
 			throw new IOException();
 		}

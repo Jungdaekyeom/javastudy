@@ -9,9 +9,14 @@ public class Song {
 	private int year;
 	private int track;
 
+	public Song() {
+		this("A", "B", "C", "D", 8, 9);
+	}
+	
 
-	public Song(String title, String artist) {
-		this(title, artist, null, null, 0, 0);
+	public Song(String artist, String title) {
+		this(title, artist, "ㅁㄴㅇㄹ", "1111", 2009, 777);
+		
 	}
 
 	public Song(String title, String artist, String album, String composer, int year, int track) {

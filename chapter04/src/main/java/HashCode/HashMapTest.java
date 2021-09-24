@@ -22,7 +22,7 @@ public class HashMapTest {
 
 		System.out.println("==============================");
 		m.clear();
-
+		
 		// ks1 객체
 		String ks1 = "one";
 		m.put(ks1, 1); // auto boxing
