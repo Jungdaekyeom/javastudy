@@ -39,7 +39,7 @@ public class BufferedReaderTest {
 
 			} catch (IOException e) {
 				e.printStackTrace();
-				System.in;
+
 			}
 		}
 	}
