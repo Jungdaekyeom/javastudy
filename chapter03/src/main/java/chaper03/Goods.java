@@ -6,7 +6,7 @@ public class Goods {
 	// 인스턴스 변수
 	// String name; => 같은 패키지 내에서 사용 가능
 	public static int countOfGoods = 0;
-	
+
 	private String name;
 	private int price;
 	private int countStock;
@@ -32,11 +32,11 @@ public class Goods {
 	}
 
 	public void setPrice(int price) {
-		
-		if(price < 0) {
+
+		if (price < 0) {
 			return;
 		}
-		
+
 		this.price = price;
 	}
 
@@ -58,26 +58,18 @@ public class Goods {
 
 	public void showInfo() {
 		System.out.println(
-				"name :" + name +
-				", price:" + price + 
-				", countStock:" + countStock + 
-				", countSold:10" + countSold);
-	}
-	
-	
-	public int calcDiscountPrice(int percentage){
-	    int discountPrice = price - price*30/100;
-	    return discountPrice;
+				"name :" + name + ", price:" + price + ", countStock:" + countStock + ", countSold:10" + countSold);
 	}
 
-
+	public int calcDiscountPrice(int percentage) {
+		int discountPrice = price - price * 30 / 100;
+		return discountPrice;
+	}
 
 	@Override
 	public String toString() {
 		return "Goods [name=" + name + ", price=" + price + ", countStock=" + countStock + ", countSold=" + countSold
 				+ "]";
 	}
-	
-	
 
 }
